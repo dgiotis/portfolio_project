@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Skill, ContactMessage
+from .models import Project, Skill, ContactMessage ,TimelineItem 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
@@ -12,3 +12,7 @@ class SkillAdmin(admin.ModelAdmin):
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display =('name','email','subject','created_at',)
+
+@admin.register(TimelineItem)
+class TimeLineItemAdmin(admin.ModelAdmin):
+    list_display = ('category','title', 'start_year', 'end_year')

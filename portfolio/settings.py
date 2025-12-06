@@ -38,15 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'tailwind',
-    'theme',
+    # 'tailwind',
+    # 'theme', Commented for now im goona use cdn
 ]
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ["127.0.0.1"]
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "theme" / "static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

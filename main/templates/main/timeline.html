@@ -1,0 +1,60 @@
+<section id="timeline" class="max-w-3xl mx-auto mt-20 p-6">
+    <h2 class="text-3xl font-bold text-center text-white mb-10">
+        My Journey
+    </h2>
+
+    <div class="relative">
+
+        <!-- Vertical Line -->
+        <div class="absolute left-6 top-0 w-1 h-full bg-gray-300 dark:bg-gray-700"></div>
+
+        {% for item in timeline %}
+        <div class="relative pl-20 mb-12">
+
+            <!-- Icon Bubble -->
+            <div class="absolute left-0 top-1 w-12 h-12 rounded-full flex items-center justify-center 
+                        shadow-lg text-white text-xl
+                        {% if item.category == "education" %}
+                            bg-blue-600
+                        {% elif item.category == "work" %}
+                            bg-purple-600
+                        {% else %}
+                            bg-green-600
+                        {% endif %}
+                        ">
+
+                {% if item.category == 'education' %}
+                🎓
+                {% elif  item.category == 'work'%}
+                💼
+                {% else %}
+                   🪖
+                {% endif %}
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 
+                        transition hover:-translate-y-1 hover:shadow-2xl">
+
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                    {{ item.title }}
+                </h3>
+
+                <p class="text-gray-500 dark:text-gray-400">
+                    {{ item.institution }}
+                </p>
+
+                <p class="text-sm text-blue-600 dark:text-blue-400 font-semibold mt-1">
+                    {{ item.start_year }} – {{ item.end_year|default:"Present" }}
+                </p>
+
+                {% if item.description %}
+                <p class="text-gray-700 dark:text-gray-300 mt-3 leading-relaxed">
+                    {{ item.description }}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
