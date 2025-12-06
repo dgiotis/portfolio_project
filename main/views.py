@@ -5,7 +5,7 @@ from django.urls import reverse
 
 def home(request):
     projects = Project.objects.all()
-    skills = Skill.objects.all()
+    skills = Skill.objects.all().order_by('-level')
     timeline = TimelineItem.objects.order_by('-start_year')  # newest first
 
     if request.method == "POST":
