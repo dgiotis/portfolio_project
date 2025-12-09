@@ -6,6 +6,9 @@ class Project(models.Model):
     description= models.TextField()
     image = models.ImageField(upload_to='projects/')
     link = models.URLField(blank=True, null=True)
+
+    skills = models.ManyToManyField('Skill', blank=True)
+
     tech_stack = models.CharField(max_length=200, blank=True) #todo: make a seperate model for adding tech stack.
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -49,3 +52,14 @@ class TimelineItem(models.Model):
 
     def __str__(self):
         return f"{self.title} ({self.category})"
+
+class PersonalInfo(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    description = models.TextField()
+    linkedin_link = models.CharField(max_length=100)
+    github_link = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='personalinfo/', blank=True , null=True)
+
+    def __str__(self):
+        return self.name

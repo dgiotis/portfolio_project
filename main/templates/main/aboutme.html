@@ -1,0 +1,40 @@
+<section id="about" class="max-w-5xl mx-auto mt-20 p-6">
+    <h2 class="text-4xl font-bold text-center text-gray-900 dark:text-white mb-10" data-aos="fade-up">
+        About Me
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+        <!-- Left: Image -->
+        <div class="flex justify-center" data-aos="fade-right">
+            <img src="{{personal_info.image.url}}"
+                 alt="Dimitris Giotis"
+                 class="rounded-2xl shadow-xl w-90 h-90 object-cover border-4 border-gray-300 dark:border-gray-700">
+        </div>
+
+        <!-- Right: Text -->
+        <div data-aos="fade-left">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                Hi, I'm {{personal_info.name}}
+            </h3>
+
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+               {{personal_info.description}}
+            </p>
+
+      
+            <!-- Buttons -->
+            <div class="flex gap-4 mt-6">
+                <a href="#projects"
+                   class="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition font-medium">
+                    View My Work
+                </a>
+                <a href="#contact"
+                   class="px-5 py-3 bg-gray-800 dark:bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition font-medium">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
